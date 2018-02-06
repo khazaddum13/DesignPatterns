@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9AE3BDC-F023-4F5F-8BDA-18E1F50A29F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DesignPatterns.BusinessServices</RootNamespace>
+    <AssemblyName>DesignPatterns.BusinessServices</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BrigdeDesignPattern\PerformanceReport.cs" />
+    <Compile Include="BrigdeDesignPattern\Rapor.cs" />
+    <Compile Include="BrigdeDesignPattern\ReportFormats\DesktopFormat.cs" />
+    <Compile Include="BrigdeDesignPattern\ReportFormats\MobileFormat.cs" />
+    <Compile Include="BrigdeDesignPattern\ReportFormats\WebReportFormat.cs" />
+    <Compile Include="BrigdeDesignPattern\SalesReport.cs" />
+    <Compile Include="BuilderDesignPattern\BirthdayMessageBuilder.cs" />
+    <Compile Include="BuilderDesignPattern\EidMessageBuilder.cs" />
+    <Compile Include="BuilderDesignPattern\MessageCreator.cs" />
+    <Compile Include="FactoryDesignPattern\Permissions\Delete.cs" />
+    <Compile Include="FactoryDesignPattern\Permissions\Execute.cs" />
+    <Compile Include="FactoryDesignPattern\Permissions\Read.cs" />
+    <Compile Include="FactoryDesignPattern\Permissions\Write.cs" />
+    <Compile Include="FactoryDesignPattern\Role\Engineer.cs" />
+    <Compile Include="FactoryDesignPattern\Role\Manager.cs" />
+    <Compile Include="ObserverDesignPattern\ProductBS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PrototypeDesignPattern\CarToRace.cs" />
+    <Compile Include="SingletonDesignPattern\DBHelper.cs" />
+    <Compile Include="StrategyDesignPattern\Permit\CalculateDeptAPermit.cs" />
+    <Compile Include="StrategyDesignPattern\Permit\CalculateDeptBPermit.cs" />
+    <Compile Include="StrategyDesignPattern\Salary\CalculateEngineerSalary.cs" />
+    <Compile Include="StrategyDesignPattern\Salary\CalculateManagerSalary.cs" />
+    <Compile Include="StrategyDesignPattern\Salary\CalculateTechnicianSalary.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandDesignPattern\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DesignPatterns.BusinessServices.ABL\DesignPatterns.BusinessServices.ALL.csproj">
+      <Project>{fac2f773-27c8-4b08-9c4e-76e35bd70813}</Project>
+      <Name>DesignPatterns.BusinessServices.ALL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignPatterns.BusinessServices.Interfaces\DesignPatterns.BusinessServices.Interfaces.csproj">
+      <Project>{a97236c8-1996-4564-9be3-8a7e3ac2e9e0}</Project>
+      <Name>DesignPatterns.BusinessServices.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignPatterns.Model\DesignPatterns.Model.csproj">
+      <Project>{55394e60-92a8-4bce-8726-7f63ce16fd97}</Project>
+      <Name>DesignPatterns.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
